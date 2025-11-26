@@ -1,0 +1,238 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="YouTube DNN RecSys Architecture" id="architecture">
+    <mxGraphModel dx="1412" dy="1208" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="YouTube DNN 推荐系统架构" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="600" y="40" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="data-layer-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#01579B;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="80" y="120" width="680" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="data-layer-title" value="数据处理层 (Data Processing Layer)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="100" y="130" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="python-data" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="120" y="180" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="python-data-title" value="Python 数据处理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="120" y="185" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="data2tfrecords" value="data2tfrecords.py&lt;br&gt;• 生成随机训练数据&lt;br&gt;• 转换为 TFRecords 格式&lt;br&gt;• 训练/评估数据集" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E65100;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="140" y="220" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="scala-data" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#4A148C;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="440" y="180" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="scala-data-title" value="Scala + Spark 数据处理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="440" y="185" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="makedata" value="MakeDataOne.scala&#xa;MakeDataTwo.scala&#xa;&#xa;• Spark 分布式数据生成&#xa;• TFRecords 格式输出&#xa;• HDFS 存储支持" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4A148C;align=center;verticalAlign=middle;fontSize=12;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="460" y="220" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="storage-layer-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F8E9;strokeColor=#33691E;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="840" y="120" width="680" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="storage-layer-title" value="存储层 (Storage Layer)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="860" y="130" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tfrecords-storage" value="TFRecords 数据存储&#xa;&#xa;data/tfrecords/&#xa;  ├─ train/&#xa;  │   └─ train.tfrecords&#xa;  └─ evaluation/&#xa;      └─ evaluation.tfrecords" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#33691E;align=left;verticalAlign=top;fontSize=12;spacingLeft=10;spacingTop=10;fontFamily=Courier New;" parent="1" vertex="1">
+          <mxGeometry x="880" y="180" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="checkpoint-storage" value="模型 Checkpoint 存储&#xa;&#xa;data/checkpoints/&#xa;  ├─ ckpt/&#xa;  │   ├─ checkpoint&#xa;  │   └─ eval/&#xa;  └─ modelpath/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#33691E;align=left;verticalAlign=top;fontSize=12;spacingLeft=10;spacingTop=10;fontFamily=Courier New;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="180" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="model-layer-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#880E4F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="80" y="420" width="680" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="model-layer-title" value="模型训练层 (Model Training Layer)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="100" y="430" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dnn-model" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#880E4F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="120" y="480" width="600" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="dnn-title" value="dnn.py - TensorFlow DNN 模型" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="120" y="485" width="600" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="input-layer" value="输入层&lt;br&gt;• visit_items_index (5 items)&lt;br&gt;• continuous_features (16 dims)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="150" y="530" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding-layer" value="Embedding 层&lt;br&gt;• Item Embedding (500 items)&lt;br&gt;• Embedding Size: 16&lt;br&gt;• Average Pooling" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="150" y="630" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dnn-layers" value="DNN 网络层&lt;br&gt;• Dense Layer 1: 64 units + ReLU&lt;br&gt;• Dropout Layer&lt;br&gt;• Dense Layer 2: 32 units + ReLU&lt;br&gt;• Dropout Layer&lt;br&gt;• User Vector: 16 dims + ReLU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F57F17;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="380" y="530" width="310" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="output-layer" value="输出层&lt;br&gt;• Softmax 分类 (500 classes)&lt;br&gt;• Cross Entropy Loss&lt;br&gt;• Top-K 推荐结果" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="380" y="650" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="prediction-layer-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE7F6;strokeColor=#311B92;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="840" y="420" width="680" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="prediction-layer-title" value="预测服务层 (Prediction Layer)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="860" y="430" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="user-vector-prediction" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#311B92;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="880" y="480" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="user-vector-title" value="用户向量预测" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="880" y="485" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="predict-user-vector" value="PredictUserVector.scala&lt;br&gt;• 加载 SavedModel&lt;br&gt;• Spark 分布式预测&lt;br&gt;• 生成用户向量&lt;br&gt;  (embedding_average → user_vector)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#311B92;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="900" y="520" width="240" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="item-embedding-prediction" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#311B92;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="480" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="item-embedding-title" value="物品 Embedding 预测" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1200" y="485" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="item-embedding-predictor" value="ItemEmbeddingPredictor.scala&lt;br&gt;• 加载 SavedModel&lt;br&gt;• 提取 Item Embedding&lt;br&gt;• 特征工程 (FeatureBuilder)&lt;br&gt;• 支持多特征输入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#311B92;align=left;verticalAlign=top;fontSize=12;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="520" width="240" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="model-loading" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#311B92;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="880" y="640" width="600" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="model-loading-title" value="模型加载与推理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="880" y="645" width="600" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="load-dnn-model" value="load_dnn_model.py - Python 模型加载与推理&#xa;• TensorFlow SavedModel 加载   • 在线推理服务   • 批量预测" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#311B92;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="900" y="680" width="560" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="utils-layer-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFEBE9;strokeColor=#3E2723;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="80" y="820" width="1440" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="utils-layer-title" value="工具与辅助层 (Utilities &amp; Support)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="100" y="830" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tensorboard" value="TensorBoard&lt;br&gt;tensor_board.py&lt;br&gt;训练可视化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E2723;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="120" y="875" width="200" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="feature-column" value="Feature Engineering&lt;br&gt;feature_column.py&lt;br&gt;特征列定义" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E2723;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="360" y="875" width="200" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="custom-layer" value="Custom Layers&lt;br&gt;self_defined_network_layer.py&lt;br&gt;自定义网络层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E2723;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="600" y="875" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="spark-base" value="Spark Base Classes&lt;br&gt;BaseSparkLocal.scala&lt;br&gt;BaseSparkOnline.scala&lt;br&gt;Spark 应用基类" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E2723;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="880" y="875" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="config" value="Configuration&lt;br&gt;vars.prod.properties&lt;br&gt;vars.sit.properties&lt;br&gt;环境配置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E2723;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="875" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#01579B;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="python-data" target="tfrecords-storage" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="255" as="sourcePoint" />
+            <mxPoint x="860" y="255" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="430" y="255" />
+              <mxPoint x="430" y="140" />
+              <mxPoint x="610" y="140" />
+              <mxPoint x="800" y="140" />
+              <mxPoint x="800" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow1-label" value="生成 TFRecords" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="530" y="200" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#4A148C;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="scala-data" target="tfrecords-storage" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="740" y="255" as="sourcePoint" />
+            <mxPoint x="860" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow2-label" value="Spark 生成" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="750" y="270" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#880E4F;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="dnn-model" target="tfrecords-storage" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="480" as="sourcePoint" />
+            <mxPoint x="950" y="360" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="400" />
+              <mxPoint x="950" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow3-label" value="读取训练数据" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="490" y="375" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow4" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#880E4F;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="dnn-title" target="checkpoint-storage" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="720" y="605" as="sourcePoint" />
+            <mxPoint x="1200" y="293" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="400" />
+              <mxPoint x="840" y="400" />
+              <mxPoint x="1230" y="400" />
+              <mxPoint x="1270" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow4-label" value="保存模型" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1090" y="435" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow5" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#311B92;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="user-vector-prediction" target="checkpoint-storage" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1020" y="480" as="sourcePoint" />
+            <mxPoint x="1410" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1190" y="545" />
+              <mxPoint x="1190" y="470" />
+              <mxPoint x="1190" y="450" />
+              <mxPoint x="1210" y="450" />
+              <mxPoint x="1410" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow5-label" value="加载模型" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1140" y="375" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow6" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#311B92;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="item-embedding-prediction" target="checkpoint-storage" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1340" y="480" as="sourcePoint" />
+            <mxPoint x="1480" y="293" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1550" y="545" />
+              <mxPoint x="1550" y="480" />
+              <mxPoint x="1550" y="400" />
+              <mxPoint x="1550" y="293" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow6-label" value="加载模型" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1320" y="375" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#757575;strokeWidth=2;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="1000" width="1440" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="图例 (Legend)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="100" y="1010" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-python" value="Python / TensorFlow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;align=center;verticalAlign=middle;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="120" y="1055" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-scala" value="Scala / Spark" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#4A148C;align=center;verticalAlign=middle;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="330" y="1055" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-storage" value="存储 / Storage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F8E9;strokeColor=#33691E;align=center;verticalAlign=middle;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="540" y="1055" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-model" value="模型训练 / Training" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#880E4F;align=center;verticalAlign=middle;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="750" y="1055" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-prediction" value="预测服务 / Prediction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE7F6;strokeColor=#311B92;align=center;verticalAlign=middle;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="960" y="1055" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-utils" value="工具辅助 / Utils" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFEBE9;strokeColor=#3E2723;align=center;verticalAlign=middle;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1170" y="1055" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-note" value="注：该架构实现了 YouTube DNN 推荐系统，支持 Python (TensorFlow) 和 Scala (Spark) 双栈实现&#xa;核心流程：数据生成 → TFRecords 存储 → DNN 模型训练 → 模型保存 → Spark 分布式预测" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2" parent="1" vertex="1">
+          <mxGeometry x="120" y="1105" width="1230" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
