@@ -1,6 +1,7 @@
 # YouTube-DNN-RecSys: Deep Neural Networks for YouTube Recommendations
 
-# https://dl.acm.org/doi/pdf/10.1145/2959100.2959190
+## Deep Neural Networks for YouTube Recommendations
+### https://dl.acm.org/doi/pdf/10.1145/2959100.2959190
 
 A clean, well-organized implementation of Deep Neural Networks for YouTube Recommendations, featuring both Python (TensorFlow) and Scala (Spark) implementations.
 
