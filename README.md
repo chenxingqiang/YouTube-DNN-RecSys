@@ -4,6 +4,9 @@
 
 A clean, well-organized implementation of Deep Neural Networks for YouTube Recommendations, featuring both Python (TensorFlow) and Scala (Spark) implementations.
 
+## Achitecture
+![](architecture.drawio.svg)
+
 ## 🏗️ Project Structure
 
 ```
