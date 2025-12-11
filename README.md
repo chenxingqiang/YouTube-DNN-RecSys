@@ -4,7 +4,7 @@
 ### https://dl.acm.org/doi/pdf/10.1145/2959100.2959190
 
 A clean, well-organized implementation of Deep Neural Networks for YouTube Recommendations, featuring both Python (TensorFlow) and Scala (Spark) implementations.
-
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/chenxingqiang/YouTube-DNN-RecSys)
 ## Achitecture
 ![](architecture.drawio.svg)
 
